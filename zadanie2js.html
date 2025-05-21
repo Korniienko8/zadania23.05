@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wyrocznia delficka</title>
-</head>
-<body>
-    <h1>To ja, przemożna Pytia – zadaj mi w myślach pytanie,<br>
-    a ja odpowiem czy to o czym pomyślałeś się spełni</h1>
-    <button onclick="sprawdzPrawdopodobienstwo()">Sprawdź</button>
-    <div id="wynik"></div>
-    <script>
-        function sprawdzPrawdopodobienstwo() {
-            const procent = Math.floor(Math.random() * 100) + 1;
-            const wynikDiv = document.getElementById("wynik");
-            let kolor = "";
-            if (procent <= 33) {
-                kolor = "red";
-            } else if (procent <= 66) {
-                kolor = "blue";
-            } else {
-                kolor = "green";
-            }
-            wynikDiv.style.color = kolor;
-            wynikDiv.textContent = `Prawdopodobieństwo, że tak będzie wynosi: ${procent}%`;
+    <style>
+        body {
+            text-align: center;
         }
-    </script>
+    </style>
+</head>
 
+<body>
+    <h1>To ja, przemozna Pytia - zadaj mi w myślach pytanie, a ja odpowiem czy to o czym pomyślałeś się spełni</h1>
+    <br>
+    <input placeholder="ZAPYTAJ">
+    <button onclick="random()">Sprawdz</button>
+    <br><br>
+    <div id="1">
+        <span>Prawdopodobieństwo, że tak będzie wynośi: </span>
+    </div>
+    <script>
+        function random() {
+            const x = document.getElementById('1');
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            if (randomNumber < 33) {
+                x.style.background = 'red';
+            }
+            else if (randomNumber > 33 && randomNumber < 67) {
+                x.style.background = 'blue';
+            }
+            else if (randomNumber > 66)
+                x.style.background = 'green';
+        }
+
+    </script>
 </body>
+
 </html>
