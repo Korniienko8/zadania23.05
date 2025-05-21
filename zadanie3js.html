@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mord fustang</title>
+</head>
+
+<body>
+    <input type="text" placeholder="pierwsze słowo" id="1">
+    <input type="text" placeholder="drugie słowo" id="2">
+    <br>
+    <button onclick="swap()">Zamień</button>
+    <span id="result"></span>
+    <script>
+        function swap() {
+            const s1 = document.getElementById('1');
+            const s2 = document.getElementById('2');
+            let w1 = s2[0];
+            let w2 = s1[0];
+            let s1new = s1.slice(1);
+            let s2new = s2.slice(2);
+            const result = w1 + s1new + "," + 12 + s2new;
+            document.getElementById('result').textContent = "wynik: " + result;
+        }
+    </script>
+</body>
+
+</html>
