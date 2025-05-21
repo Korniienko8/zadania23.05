@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pole trójkąta</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <h2>Obliczanie pola trójkąta</h2>
+  <label>Bok a: <input type="number" id="a" step="any"></label><br>
+  <label>Bok b: <input type="number" id="b" step="any"></label><br>
+  <label>Bok c: <input type="number" id="c" step="any"></label><br>
+  <button onclick="obliczPole()">Oblicz pole</button>
+  <p id="wynik"></p>
+
+  <script>
+    function obliczPole() {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const c = parseFloat(document.getElementById('c').value);
+      const wynik = document.getElementById('wynik');
+
+      if (a <= 0 || b <= 0 || c <= 0) {
+        wynik.textContent = 'Długości boków muszą być dodatnie!';
+        return;
+      }
+
+    
+      if (a + b > c && a + c > b && b + c > a) {
+        const p = (a + b + c) / 2; 
+        const pole = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        wynik.textContent = 'Pole trójkąta wynosi: ' + pole.toFixed(2);
+      } else {
+        wynik.textContent = 'Z podanych boków nie sposób utworzyć trójkąta!';
+      }
+    }
+  </script>
+</body>
+</html>
+
+

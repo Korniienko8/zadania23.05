@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyrocznia delficka</title>
+</head>
+<body>
+    <h1>To ja, przemożna Pytia – zadaj mi w myślach pytanie,<br>
+    a ja odpowiem czy to o czym pomyślałeś się spełni</h1>
+    <button onclick="sprawdzPrawdopodobienstwo()">Sprawdź</button>
+    <div id="wynik"></div>
+    <script>
+        function sprawdzPrawdopodobienstwo() {
+            const procent = Math.floor(Math.random() * 100) + 1;
+            const wynikDiv = document.getElementById("wynik");
+            let kolor = "";
+            if (procent <= 33) {
+                kolor = "red";
+            } else if (procent <= 66) {
+                kolor = "blue";
+            } else {
+                kolor = "green";
+            }
+            wynikDiv.style.color = kolor;
+            wynikDiv.textContent = `Prawdopodobieństwo, że tak będzie wynosi: ${procent}%`;
+        }
+    </script>
+
+</body>
+</html>
