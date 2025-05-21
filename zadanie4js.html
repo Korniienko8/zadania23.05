@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" placeholder="pierwsza liczba" id="1n">
+    <br>
+    <input type="number" placeholder="druga liczba" id="2n">
+    <br>
+    <input type="number" placeholder="trzecia liczba" id="3n">
+    <br>
+    <button>Sprawdz</button>
+    <div id="wynik"></div>
+    <script>
+        function znajdzMinMax() {
+            const l1 = parseFloat(document.getElementById("1n").value);
+            const l2 = parseFloat(document.getElementById("2n").value);
+            const l3 = parseFloat(document.getElementById("3n").value);
+            if (isNaN(l1) || isNaN(l2) || isNaN(l3)) {
+                document.getElementById("wynik").textContent = "Wprowadź wszystkie trzy liczby!";
+                return;
+            }
+            const min = Math.min(l1, l2, l3);
+            const max = Math.max(l1, l2, l3);
+            document.getElementById("wynik").textContent = `Najmniejsza liczba: ${min}, Największa liczba: ${max}`;
+        }
+    </script>
+
+</body>
+
+</html>
