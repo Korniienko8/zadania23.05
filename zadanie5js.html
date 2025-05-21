@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h3>Wpisz słowo:</h3>
+<input type="text" id="napis">
+<button onclick="sprawdz()">Sprawdź</button>
+<p id="wynik"></p>
+<script>
+function sprawdz() {
+    let tekst = document.getElementById("napis").value;
+    let dlugosc = tekst.length >= 6;
+    let koncowka = tekst.endsWith("kot");
+
+    if (dlugosc && koncowka) {
+        document.getElementById("wynik").innerText = "Napis ma co najmniej 6 znaków i kończy się na 'kot'.";
+    } else if (!dlugosc && koncowka) {
+        document.getElementById("wynik").innerText = "Napis kończy się na 'kot', ale ma mniej niż 6 znaków.";
+    } else if (dlugosc && !koncowka) {
+        document.getElementById("wynik").innerText = "Napis ma co najmniej 6 znaków, ale nie kończy się na 'kot'.";
+    } else {
+        document.getElementById("wynik").innerText = "Napis ma mniej niż 6 znaków i nie kończy się na 'kot'.";
+    }
+}
+</script>
+
+</body>
+</html>
